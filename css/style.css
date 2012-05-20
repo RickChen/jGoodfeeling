@@ -218,19 +218,18 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.pinterest_people{
+	margin: 0;
+	padding: 0;
+	list-style: none; 
+}
+.pinterest_people li{
+	display: inline;
+	padding: 0 12px 0 0;
+}                       
+.pinterest_people li img{
+	width:100px;
+}
 
 
 /* ==|== media queries ======================================================
