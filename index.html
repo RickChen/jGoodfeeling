@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jGoodfeeling by GitChen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>jGoodfeeling</h1>
+        <p>jQuery plugin to show an awesome modal dialog and it will give you a good feeling.</p>
+        <p class="view"><a href="https://github.com/GitChen/jGoodfeeling">View the Project on GitHub <small>GitChen/jGoodfeeling</small></a></p>
+        <ul>
+          <li><a href="https://github.com/GitChen/jGoodfeeling/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/GitChen/jGoodfeeling/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/GitChen/jGoodfeeling">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>jGoodfeeling</h3>
+
+<p>Modal window with a cool animated background. Currently still adding new effects and bug fixes. You can change or alter the code however you want. It is really really easy to use. Just include in your script like this:</p>
+
+<pre><code>$('body').jGoodfeeling();
+</code></pre>
+
+<h3>Customization</h3>
+
+<p>Obviously you will want to customize what is in the modal dialog. Easy you can overide any of these options when you instantiate jGoodfeeling.</p>
+
+<pre><code>
+fonts: '&lt;link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=EXAMPLEFONT"&gt;',
+containerHeight: 800, // how much the animation will cover, plugin will take care of this for you in most cases
+containerWidth: 1200, // how much the animation will cover, plugin will take care of this for you in most cases
+linearDelay: 50, // time between each box animating in linear mode
+diagonalDelay: 200, // time between each level in diagonal delay
+animationType: 'diagonal', //linear animation 
+animationTime: 1000, // time for the animation to draw
+sliceDim: 100, // side in px of the boxes
+sliceDelay: 500, // how long each box takes to draw
+sliceZ: 9999, // z-index of slices
+sliceOpacity: 1, //final opacity of cool bg
+sliceInitOpacity: 0, //initial opacity , probably should always be 0
+modalWidth: 700, // modal width px
+modalHeight: 360, //modal height px
+// Specific css for the modal dialog you can overwrite the default styles by passing in an object here
+modalCSS: {
+    'position': 'absolute',
+    'left': '50%',
+    'top': '-100%',
+    'padding': '1em',
+    'font-size': '1em',
+    'color': 'black',
+    'overflow': 'hidden',
+    '-webkit-box-shadow': '0px 0px 20px rgba(0, 0, 0, 0.5)',
+    '-moz-box-shadow': '0px 0px 20px rgba(0, 0, 0, 0.5)',
+    '-moz-border-radius': '5px',
+    '-webkit-border-radius': '5px',
+    'background': 'rgba(255, 255, 255, 1)'
+}, 
+// Specific css for the modal dialog header you can overwrite the default styles by passing in an object here
+modalHeader: 'Default Header',
+modalHeaderCSS: {
+    'text-align': 'center',
+    'margin-bottom': '1em',
+    'padding-bottom': '1em'
+},
+// Specific css for the modal dialog body you can overwrite the default styles by passing in an object here
+modalBody: 'Default Body Text',
+modalBodyCSS: {
+    'color': '#CB2027',
+    'font-size': '2em',
+    'text-align': 'center',
+},
+modalZ: 99999, //z -index for modal dialog
+modalAnimationTime: 4000, // how long the modal dialog takes to render
+// pass in an array of colors to let the plugin render the bg
+colorScheme: ['#eee', '#ddd', '#ccc', '#bbb', '#aaa', '#999', '#888', '#777', '#666', '#555', '#444', '#333']   
+</code></pre>
+
+<h3>Example Config Call</h3>
+
+<pre><code> $('body').jGoodfeeling({
+     fonts: '&lt;link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css"&gt;',
+     modalHeader: 'Rick Chen Header',
+     modalBody: '&lt;p&gt;Hi! My name is Rick. &lt;/p&gt;'
+ });
+</code></pre>
+
+<h3>Triggers</h3>
+
+<p>The animation starts once you attach the plugin, so if you attach it on page load the animation will run immediately. You will want to trigger it from your page somehow. For example:</p>
+
+<pre><code>//This will trigger the animation when the user hits enter on the keyboard.
+var kkeys = [];
+var pin = "13";
+$(document).keydown(function(e) {
+    kkeys.push(e.keyCode);
+    if (kkeys.toString().indexOf(pin) &gt;= 0)
+    {
+        kkeys = []; 
+        if($('._jGoodfeeling_container').length === 0){
+            $('body').jGoodfeeling();
+        }   
+    }
+});   
+</code></pre>
+
+<h3>Authors and Contributors</h3>
+
+<p>I included jquery easing plugin with my script, just to make like easier. Also used some plugin tips from websanova.com</p>
+
+<h3>Support or Contact</h3>
+
+<p>Want to see a demo go to dev.rickchendesign.com/jGoodfeeling. You can also contact <a href="mailto:rick@rickchendesign.com">rick@rickchendesign.com</a> and I will try and help!</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/GitChen">GitChen</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
