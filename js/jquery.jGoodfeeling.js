@@ -267,20 +267,13 @@ jQuery.extend( jQuery.easing,
 		sliceInitOpacity: 0,  	
         modalWidth: 700,
         modalHeight: 360,
-		modalCSS: {
-			    'position': 'absolute',
-                'left': '50%',
-                'top': '-100%',
- 				'padding': '1em',
-                'font-size': '1em',
-                'color': 'black',
-                'overflow': 'hidden',
-                '-webkit-box-shadow': '0px 0px 20px rgba(0, 0, 0, 0.5)',
+		modalCSS: {			
+				'background' : 'white',
+				'background' : 'rgba(255, 255, 255, 1)',
+				                '-webkit-box-shadow': '0px 0px 20px rgba(0, 0, 0, 0.5)',
                 '-moz-box-shadow': '0px 0px 20px rgba(0, 0, 0, 0.5)',
                 '-moz-border-radius': '5px',
-                '-webkit-border-radius': '5px',
-				'background' : 'white',
-				'background' : 'rgba(255, 255, 255, 1)'  
+                '-webkit-border-radius': '5px'    
 		},
 		modalHeader :'Default Header',
 		modalHeaderCSS: {
@@ -298,6 +291,7 @@ jQuery.extend( jQuery.easing,
 		modalAnimationTime: 4000,
  		colorScheme : ['#C84281', '#F0624F','#84399F','#A2DD49','#E390B7','#F7A79C', '#BC86CF', '#CBEE96'],
 		colorScheme : ['#CB2029', '#CF6C21', '#A31A6D', '#28A91B', '#E57B80', '#E7AA7C', '#D170AB', '#7BD472'],
+		colorScheme : ['#78E700','#00B454','#D8F800','#DE0052','#9BF33D','#36DA82','#E3FC3F','#EE3C7E'],
 		colorScheme : ['#eee', '#ddd', '#ccc', '#bbb', '#aaa', '#999','#888','#777', '#666','#555','#444','#333']   	
     };
 
@@ -405,6 +399,12 @@ jQuery.extend( jQuery.easing,
 			$modal = $('<div class="' + $this.settings.prefix + '_modal_container"></div>'),
  			
 			modalCSS = $.extend({
+				'position': 'absolute',
+                'left': '50%',
+                'top': '-100%',
+ 				'padding': '1em',
+                'font-size': '1em',
+                'overflow': 'hidden',                                   
                 'width': $this.settings.modalWidth,
                 'height': $this.settings.modalHeight,
                 'margin-left': '-' + $this.settings.modalWidth / 2 + 'px',
