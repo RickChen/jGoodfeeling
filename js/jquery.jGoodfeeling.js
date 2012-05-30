@@ -285,7 +285,7 @@ jQuery.extend( jQuery.easing,
 		modalBodyCSS: {
 				'color' : '#CB2027',
 				'font-size': '2em',
-				'text-align':'center',   			
+				'text-align':'center'   			
 		},
 		modalZ: 99999,
 		modalAnimationTime: 4000,
@@ -306,25 +306,17 @@ jQuery.extend( jQuery.easing,
     }
 
     function getHeight() {
-        var bodyHeight = $('body').height(),
-            windowHeight = $(window).height();
+        var windowHeight = $(window).height();
 
-        if (bodyHeight < windowHeight) {
-            return windowHeight;
-        } else {
-            return bodyHeight;
-        }
+        return windowHeight;
+
     }
 
     function getWidth() {
-        var bodyWidth = $('body').width(),
-            windowWidth = $(window).width();
+        var windowWidth = $(window).width();
 
-        if (bodyWidth < windowWidth) {
-            return windowWidth;
-        } else {
-            return bodyWidth;
-        }
+        return windowWidth;
+
     }
 
     Goodfeeling.prototype = {
@@ -334,6 +326,7 @@ jQuery.extend( jQuery.easing,
             if ($this.goodfeeling) return $this.goodfeeling;
 
             $this.goodfeelingContainer = $('<div class="' + $this.settings.prefix + '_container"></div>');
+			$this.goodmodalContainer = $('<div class="' + $this.settings.prefix + '_modal_container"></div>');
             $this.goodfeelingContainer.data('doneLoading', false);
 
             var containerCSS = {
@@ -345,7 +338,18 @@ jQuery.extend( jQuery.easing,
                 'top': 0,
                 'z-index': 1
             }
+            var modalcontainerCSS = {
+                'position': 'fixed',
+                'overflow': 'hidden',
+                'width': getWidth(),
+                'height': getHeight(),
+                'left': 0,
+                'top': 0,
+                'z-index': 2
+            }
             $this.goodfeelingContainer.css(containerCSS);
+			$this.goodmodalContainer.css(modalcontainerCSS);
+			$this.goodfeelingContainer.append($this.goodmodalContainer);
             $this.attachSlices($this.goodfeelingContainer);
             return $this.goodfeelingContainer;
         },
@@ -428,7 +432,7 @@ jQuery.extend( jQuery.easing,
 			
 			$modal.append($modalContent);
             $modal.css(modalCSS);
-            $('body').append($modal);
+            $this.goodmodalContainer.append($modal);
             
 			$modal.animate({
                 top: '50%'
