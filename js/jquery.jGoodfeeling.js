@@ -399,7 +399,7 @@ jQuery.extend( jQuery.easing,
 			$modal = $('<div class="' + $this.settings.prefix + '_modal_container"></div>'),
  			
 			modalCSS = $.extend({
-				'position': 'absolute',
+				'position': 'fixed',
                 'left': '50%',
                 'top': '-100%',
  				'padding': '1em',
