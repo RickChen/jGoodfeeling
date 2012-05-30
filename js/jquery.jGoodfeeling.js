@@ -337,7 +337,7 @@ jQuery.extend( jQuery.easing,
             $this.goodfeelingContainer.data('doneLoading', false);
 
             var containerCSS = {
-                'position': 'absolute',
+                'position': 'fixed',
                 'overflow': 'hidden',
                 'width': $this.settings.containerWidth,
                 'height': $this.settings.containerHeight,
@@ -490,7 +490,6 @@ jQuery.extend( jQuery.easing,
             }
             
 			$container.data('doneLoading', true);
-        }, 
-
+        } 
     }
 })(jQuery);
